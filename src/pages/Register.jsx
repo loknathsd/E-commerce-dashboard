@@ -2,6 +2,7 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -9,9 +10,9 @@ const Register = () => {
 
     return (
         <div className='bg-gray-100 w-full h-[100vh] flex justify-center'>
-            <div className=' w-[50%] shadow-lg  h-5/6 bg-white mt-10 rounded-md text-center '>
+            <div className=' w-[50%] shadow-lg  h-5/6 bg-white mt-10 rounded-lg text-center '>
                 <div className='font-serif' >
-                    <h1 className='mt-12 text-3xl font-serif'>SignUp To Dashboard</h1>
+                    <h1 className='mt-12 text-3xl font-serif capitalize'>Create an account</h1>
                     <div className='flex justify-center gap-3 mt-10 mb-8'>
                         <button className='border-2 border-gray-30 w-72  rounded-md py-2 flex justify-center items-center align-middle '>
                             <FcGoogle className='mr-3 text-2xl' /> SignUp with Google
@@ -44,7 +45,7 @@ const Register = () => {
                         </div>
                         <input className='cursor-pointer border-2 border-gray-30 rounded-md text-white w-[86%] py-2 bg-sky-500' type="submit" value="SignUp" />
                     </form>
-                    <p className='my-5 text-sm text-gray-400'>Do you already have an account? {" "} <a href="d"> Log in</a></p>
+                    <p className='my-5 text-sm text-gray-400'>Do you already have an account? {" "} <Link to="/login"> <span className='text-blue-600 underline'>Login</span></Link></p>
                 </div>
             </div>
         </div>

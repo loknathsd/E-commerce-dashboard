@@ -2,6 +2,7 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -9,7 +10,7 @@ const Login = () => {
 
     return (
         <div className='bg-gray-100 w-full h-[100vh] flex justify-center'>
-            <div className=' w-[50%] shadow-lg  h-3/4 bg-white mt-10 rounded-md text-center '>
+            <div className=' w-[50%] shadow-lg  h-3/4 bg-white mt-16 rounded-lg text-center '>
                 <div className='font-serif' >
                     <h1 className='mt-12 text-3xl font-serif'>SignIn To Dashboard</h1>
                     <div className='flex justify-center gap-3 mt-10 mb-8'>
@@ -39,7 +40,7 @@ const Login = () => {
 
                         <input className='cursor-pointer border-2 border-gray-30 rounded-md text-white w-[86%] py-2 bg-sky-500' type="submit" value="SignIn" />
                     </form>
-                    <p className='my-5 text-sm text-gray-400'> Don't have an account?{" "} <a href="d"> Create an account</a></p>
+                    <p className='my-5 text-sm text-gray-400'> Don't have an account?{" "} <Link to="/register"> <span className='text-blue-600 underline'>Create an account</span></Link></p>
                 </div>
             </div>
         </div>

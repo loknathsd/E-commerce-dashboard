@@ -35,11 +35,11 @@ const Register = () => {
                         </div>
                         <div className='lg:flex md:flex justify-center gap-3 text-left mt-4 mb-6 font-serif'>
                             <div>
-                                <label htmlFor="">Email</label><br />
+                                <label>Email</label><br />
                                 <input className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("email")} required />
                             </div>
                             <div>
-                                <label htmlFor="">Password</label><br />
+                                <label>Password</label><br />
                                 <input className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("password")} required />
                             </div>
                         </div>

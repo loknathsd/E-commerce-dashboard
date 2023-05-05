@@ -1,4 +1,4 @@
-import React from 'react';
+import{ React,useState} from 'react';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { FaRegUser, FaUserPlus } from 'react-icons/fa';
 import { RxDashboard } from 'react-icons/rx';
@@ -49,13 +49,19 @@ const index = [
 ];
 
 const Sidebar = () => {
+    const [active,setActive] = useState("Dashboard");
+
+    const handleActiveButton = (menu)=>{
+        console.log(menu.title);
+        setActive(menu.title)
+    }
     return (
         <div className='w-20 shadow-2xl h-[100vh] px-7 pt-10'>
             <ScrollBar style={{ maxHeight: "calc(100% - 50px)" }}>
                 {index.map((nav, index) =>
                     <div key={index} className='mt-5'>
                         <Tooltip title={nav.title} placement="right" key={index} >
-                            <Link to={nav.path}><button className='mb-[1rem] text-2xl text-gray-500'>{nav.Icon}</button></Link>
+                            <Link to={nav.path}><button onClick={()=>handleActiveButton(nav)} className={`mb-[1rem] text-2xl ${active === nav.title ? 'text-blue-500' : 'text-gray-500'}`}>{nav.Icon}</button></Link>
                         </Tooltip>
                     </div>
                 )}

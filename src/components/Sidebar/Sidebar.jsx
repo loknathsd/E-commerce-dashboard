@@ -1,71 +1,75 @@
-import{ React,useState} from 'react';
-import { MdOutlineDashboard } from 'react-icons/md';
-import { FaRegUser, FaUserPlus } from 'react-icons/fa';
-import { RxDashboard } from 'react-icons/rx';
-import { CgUserList } from 'react-icons/cg';
-import { FiLogIn } from 'react-icons/fi';
-import { MdAppRegistration } from 'react-icons/md';
-import ScrollBar from "simplebar-react";
-import { Tooltip } from '@mui/material';
+import React, { useState } from 'react';
+import { MdOutlineDashboard, MdAddShoppingCart } from 'react-icons/md';
+import { BsMinecartLoaded, BsPersonFillAdd, BsFillCartCheckFill, BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs';
+import { FaUsers } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
-
 
 const index = [
     {
         title: "Dashboard",
         Icon: <MdOutlineDashboard />,
-        path: "/dashboard",
+        path: "dashboard",
     },
     {
-        title: "User Profile",
-        Icon: <FaRegUser />,
-        path: "/dashboard/user-profile",
+        title: "Products",
+        Icon: <BsMinecartLoaded />,
+        path: "products",
     },
     {
-        title: "User Grid",
-        Icon: <RxDashboard />,
-        path: "/dashboard/user-grid",
+        title: "Add Product",
+        Icon: <MdAddShoppingCart />,
+        path: "add-product",
     },
     {
-        title: "User List",
-        Icon: <CgUserList />,
-        path: "/dashboard/user-list",
+        title: "Customers List",
+        Icon: <FaUsers />,
+        path: "customers",
     },
     {
-        title: "Add user",
-        Icon: <FaUserPlus />,
-        path: "/dashboard/add-user",
+        title: "Add Customer",
+        Icon: <BsPersonFillAdd />,
+        path: "add-customer",
     },
     {
-        title: "Login",
-        Icon: <FiLogIn />,
-        path: "/login",
+        title: "Orders List",
+        Icon: <BsFillCartCheckFill />,
+        path: "orders",
     },
     {
-        title: "Register",
-        Icon: <MdAppRegistration />,
-        path: "/Register",
+        title: "Profile",
+        Icon: <CgProfile />,
+        path: "profile",
     },
+
 ];
 
 const Sidebar = () => {
-    const [active,setActive] = useState("Dashboard");
+    const [active, setActive] = useState("Dashboard");
+    const [show, setShow] = useState(false);
 
-    const handleActiveButton = (menu)=>{
-        console.log(menu.title);
-        setActive(menu.title)
+    const handleActiveButton = (menu) => {
+        setActive(menu.title);
     }
+  
     return (
-        <div className='w-20 shadow-2xl h-[100vh] px-7 pt-10'>
-            <ScrollBar style={{ maxHeight: "calc(100% - 50px)" }}>
-                {index.map((nav, index) =>
-                    <div key={index} className='mt-5'>
-                        <Tooltip title={nav.title} placement="right" key={index} >
-                            <Link to={nav.path}><button onClick={()=>handleActiveButton(nav)} className={`mb-[1rem] text-2xl ${active === nav.title ? 'text-blue-500' : 'text-gray-500'}`}>{nav.Icon}</button></Link>
-                        </Tooltip>
-                    </div>
-                )}
-            </ScrollBar>
+        <div style={{position:'sticky',top:0}}>
+            <div className={`${show ? 'w-20' : 'w-56'} shadow-2xl h-[100vh] px-7 pt-16`}>
+                <div className='text-right text-2xl text-blue-400'>
+                    {!show && <button onClick={()=>setShow(true)} ><BsFillArrowLeftSquareFill /></button>}
+                    {show && <button onClick={()=>setShow(false)}><BsFillArrowRightSquareFill /></button>}
+                </div>
+                <div style={{ maxHeight: "calc(100% - 50px)" }}>
+                    {index.map((nav, index) =>
+                        <div key={index} >
+                            <Link to={nav.path} onClick={() => handleActiveButton(nav)}  className={`font-serif flex mb-[1rem] mt-8 text-lg gap-4 cursor-pointer ${active === nav.title ? 'text-blue-500' : 'text-gray-500'}`}>
+                                <button className='text-xl'>{nav.Icon}</button>
+                                {!show && <p>{nav.title}</p>}
+                            </Link>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };

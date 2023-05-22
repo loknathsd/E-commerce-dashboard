@@ -3,11 +3,9 @@ import {GiExpense} from 'react-icons/gi'
 import {CgLoadbarSound} from 'react-icons/cg'
 import {RxDashboard} from 'react-icons/rx'
 import {ImUsers} from 'react-icons/im'
-import { Card } from '@mui/material';
 import TotalSpent from '../components/TotalSpent/TotalSpent';
 import Analytic from '../components/Analytic/Analytic';
-
-
+import Card from '../components/Card/Card';
 
 const data = [
     {   id:1,

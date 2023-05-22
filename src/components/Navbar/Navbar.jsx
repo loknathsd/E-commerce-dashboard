@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" style={{ background: 'lightgray'}}  >
+    <AppBar elevation={1} position="static"  style={{ background: '#f0f9ff',padding:'5px'}}  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

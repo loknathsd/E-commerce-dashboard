@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar elevation={1} position="static"  style={{ background: '#f0f9ff',padding:'5px'}}  >
+    <AppBar elevation={1} position="sticky"  style={{ background: '#f0f9ff',padding:'5px'}}  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

@@ -53,8 +53,8 @@ const Sidebar = () => {
     }
   
     return (
-        <div style={{position:'sticky',top:0}}>
-            <div className={`${show ? 'w-20' : 'w-56'} shadow-2xl h-[100vh] px-7 pt-16`}>
+        <div >
+            <div style={{position:'sticky', top:0 }} className={`${show ? 'w-20' : 'w-56'} border border-r-red-200 h-[100vh] px-7 pt-16`}>
                 <div className='text-right text-2xl text-blue-400'>
                     {!show && <button onClick={()=>setShow(true)} ><BsFillArrowLeftSquareFill /></button>}
                     {show && <button onClick={()=>setShow(false)}><BsFillArrowRightSquareFill /></button>}

@@ -22,7 +22,7 @@ const index = [
         path: "add-product",
     },
     {
-        title: "Customers List",
+        title: "Customers",
         Icon: <FaUsers />,
         path: "customers",
     },
@@ -32,7 +32,7 @@ const index = [
         path: "add-customer",
     },
     {
-        title: "Orders List",
+        title: "Orders",
         Icon: <BsFillCartCheckFill />,
         path: "orders",
     },

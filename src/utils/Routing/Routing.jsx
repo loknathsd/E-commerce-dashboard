@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import DashboardLayout from '../../Layout/DashboardLayout';
+import Customers from '../../pages/Customers';
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Orders from '../../pages/Orders';
@@ -16,9 +17,9 @@ const Routing = () => {
                     <Route path='/' element={<Navigate replace to="dashboard" ></Navigate>}/>
                     <Route path="dashboard" element={<Dashboard/>}/>
                     <Route path="orders" element={<Orders /> }/>
+                    <Route path='customers' element={<Customers/>}/>
                 </Route>
             </Routes>
-
         </div>
     );
 };

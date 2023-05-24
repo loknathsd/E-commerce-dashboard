@@ -6,6 +6,8 @@ import {ImUsers} from 'react-icons/im'
 import TotalSpent from '../components/TotalSpent/TotalSpent';
 import Analytic from '../components/Analytic/Analytic';
 import Card from '../components/Card/Card';
+import RecentOrders from '../components/RecentOrders';
+import TopSell from '../components/TopSell';
 
 const data = [
     {   id:1,
@@ -41,6 +43,10 @@ const Dashboard = () => {
             <div className="flex mt-10 justify-center gap-10">
                 <TotalSpent />
                 <Analytic />
+            </div>
+            <div className='flex justify-center my-10 gap-10'>
+                <RecentOrders />
+                <TopSell />
             </div>
         </div>
     );

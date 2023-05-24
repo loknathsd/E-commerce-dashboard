@@ -6,6 +6,7 @@ import Customers from '../../pages/Customers';
 import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Orders from '../../pages/Orders';
+import Products from '../../pages/Products';
 import Register from '../../pages/Register';
 
 const Routing = () => {
@@ -20,6 +21,7 @@ const Routing = () => {
                     <Route path="orders" element={<Orders /> }/>
                     <Route path='customers' element={<Customers/>}/>
                     <Route path='add-customer' element={<AddCustomer/>}/>
+                    <Route path='products' element={<Products/>}/>
                 </Route>
             </Routes>
         </div>

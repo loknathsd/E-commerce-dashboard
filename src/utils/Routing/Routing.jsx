@@ -8,6 +8,7 @@ import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Orders from '../../pages/Orders';
 import Products from '../../pages/Products';
+import Profile from '../../pages/Profile';
 import Register from '../../pages/Register';
 
 const Routing = () => {
@@ -24,6 +25,7 @@ const Routing = () => {
                     <Route path='add-customer' element={<AddCustomer/>}/>
                     <Route path='products' element={<Products/>}/>
                     <Route path='add-product' element={<AddProduct />}/>
+                    <Route path='profile' element={<Profile/>}/>
                 </Route>
             </Routes>
         </div>

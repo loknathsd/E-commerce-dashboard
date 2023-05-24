@@ -222,11 +222,13 @@ export const ordersData = [
 
 
 export const customersGrid = [
-    { type: 'checkbox', width:'2'},
+    // { type: 'checkbox', width:'2'},
     {
         field: 'CustomerName',
         headerName: 'Customer Name',
-        width: '200',
+        width: '250',
+        textAlign:'Center',
+        marginLeft:'50px',
         renderCell:(params)=> <div className="image flex gap-4">
         <img
           className="rounded-full w-10 h-10"
@@ -242,13 +244,13 @@ export const customersGrid = [
     {
         field: 'ProjectName',
         headerName: 'Project Name',
-        width: '150',
+        width: '160',
         textAlign: 'Center'
     },
     {
         field: 'Status',
         headerName: 'Status',
-        width: '130',
+        width: '160',
         format: 'yMd',
         textAlign: 'Center',
         renderCell: (params) => <p className={`${params.value=== 'Active' ? 'bg-blue-400' : params.value=== 'Pending' ? 'bg-red-400' :  params.value==='Completed' ? 'bg-green-400' : params.value==='Rejected' ? 'bg-red-600' : params.value==='Cancel' ? 'bg-[#FF5C8E]' : ''} text-white px-3 py-1 rounded-full`} >{params.value}</p> ,

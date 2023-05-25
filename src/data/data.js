@@ -222,12 +222,10 @@ export const ordersData = [
 
 
 export const customersGrid = [
-    // { type: 'checkbox', width:'2'},
     {
         field: 'CustomerName',
         headerName: 'Customer Name',
         width: '250',
-        textAlign:'Center',
         marginLeft:'50px',
         renderCell:(params)=> <div className="image flex gap-4">
         <img
@@ -250,7 +248,7 @@ export const customersGrid = [
     {
         field: 'Status',
         headerName: 'Status',
-        width: '160',
+        width: '130',
         format: 'yMd',
         textAlign: 'Center',
         renderCell: (params) => <p className={`${params.value=== 'Active' ? 'bg-blue-400' : params.value=== 'Pending' ? 'bg-red-400' :  params.value==='Completed' ? 'bg-green-400' : params.value==='Rejected' ? 'bg-red-600' : params.value==='Cancel' ? 'bg-[#FF5C8E]' : ''} text-white px-3 py-1 rounded-full`} >{params.value}</p> ,
@@ -261,28 +259,26 @@ export const customersGrid = [
         headerName: 'Weeks',
         width: '100',
         format: 'C2',
-        textAlign: 'Center'
     },
     {
         field: 'Budget',
         headerName: 'Budget',
         width: '100',
         format: 'yMd',
-        textAlign: 'Center'
     },
 
     {
         field: 'Location',
         headerName: 'Location',
         width: '100',
-        textAlign: 'Center'
+        align: 'center'
     },
 
     {
         field: 'id',
         headerName: 'Customer ID',
         width: '100',
-        textAlign: 'Center',
+        align: 'center',
         isPrimaryKey: true,
     },
 

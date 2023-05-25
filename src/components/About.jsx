@@ -34,7 +34,7 @@ const info = [
 
 const About = () => {
     return (
-        <div className='bg-white w-[40%] h-[100vh] p-5 divide-y divide-slate-200 font-[Montserrat] font-medium'>
+        <div className='bg-white w-[40%] h-[550px] rounded-lg p-5 divide-y divide-slate-200 font-[Montserrat] font-medium'>
             <div className='flex justify-center gap-14 py-5 font-serif'>
                 <div className="flex gap-3">
                     <p className='text-3xl bg-blue-500 p-3 rounded text-white self-center '><SlUserFollowing /> </p>

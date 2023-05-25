@@ -5,7 +5,7 @@ import {MdSend} from 'react-icons/md'
 const Post = ({dt}) => {
     const {name,photo,banner,status} = dt;
     return (
-        <div className='bg-white p-5 mb-10 font-[Montserrat]'>
+        <div className='bg-white p-5 mb-10 font-[Montserrat] rounded-lg'>
             <div className="flex gap-2 mb-5">
                 <img className='w-12 rounded-full ' src={photo} alt="" />
                 <div className='text-xs self-center'>

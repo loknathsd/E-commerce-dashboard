@@ -5,7 +5,7 @@ import Posts from '../components/Posts/Posts';
 
 const Profile = () => {
     return (
-        <div className='w-[90%] mx-auto'>
+        <div className='w-[90%] mx-auto mt-5'>
            <Cover/>
            <div className="mt-10 flex gap-8">
             <About/>

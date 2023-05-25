@@ -5,7 +5,7 @@ import Avatar from '../images/avatar.jpg'
 const Cover = () => {
     return (
         <div className='bg-white'>
-                <img className='' src={CoverLogo} alt="" />
+                <img className='w-full' src={CoverLogo} alt="" />
                 <div className='flex gap-4 mx-10 pb-5'>
                     <img className='w-28 border-4 border-white rounded-full -mt-5 ' src={Avatar} alt="" />
                     <div className='self-center'>

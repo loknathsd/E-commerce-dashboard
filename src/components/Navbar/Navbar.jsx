@@ -10,12 +10,13 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../images/avatar.jpg'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -23,6 +24,21 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const logout=()=>{
+    console.log('logout')
+  }
+
+  const handleSetting =(title)=>{
+    if(title === 'Profile'){
+      navigate('/profile')
+    }
+    else if(title === 'Dashboard'){
+      navigate('/dashboard')
+    }
+    else if(title === 'Logout'){
+      logout();
+    }
+  }
 
   return (
     <AppBar elevation={1} position="sticky" style={{ background: '#f0f9ff', padding: '5px' }}  >
@@ -94,7 +110,7 @@ function Navbar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography variant="p" textAlign="center">{setting}</Typography>
+                  <Typography onClick={()=>handleSetting(setting)} variant="p" textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

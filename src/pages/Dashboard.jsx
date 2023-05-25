@@ -38,7 +38,7 @@ const Dashboard = () => {
         <div>
             <h1 className='text-3xl font-serif text-gray-600 ml-10 mt-5'>Overview</h1>
             <div className='flex justify-center gap-5 mt-5'>
-                {data.map(dt => <Card key={dt.id} dt={dt} />)}
+                {data.map(dat => <Card key={dat.id} dat={dat} />)}
             </div>
             <div className="flex mt-10 justify-center gap-10">
                 <TotalSpent />

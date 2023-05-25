@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../images/avatar.jpg'
 import { Link } from 'react-router-dom';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -20,7 +20,6 @@ function Navbar() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
@@ -45,10 +44,9 @@ function Navbar() {
             }}
           >
           </Typography>
-          <div>
+          <Box>
             <input placeholder='Search' type="text" className='px-8 py-2 border shadow rounded bg-slate-100 text-black ' />
-          </div>
-
+          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -65,14 +63,13 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           </Box>
-          <div className="text-black flex gap-8 mr-12 font-[Montserrat] text-lg font-bold">
+          <Box className="text-black flex gap-8 mr-12 font-[Montserrat] text-lg font-bold">
             <Link to='/login'>Login</Link>
             <Link to='/register'>Register</Link>
-          </div>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -97,7 +94,7 @@ function Navbar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography variant="p" textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

@@ -30,7 +30,7 @@ const TopSell = () => {
         <div className='w-[30%] bg-white rounded-md'>
             <h1 className='mt-5 text-lg font-serif text-left px-10 '>Top selling products</h1>
             {
-                products.map(pd=><div>
+                products.map(pd=><div key={pd.id} >
                     <div className='flex mt-8 font-serif justify-center  gap-4'>
                         <img className="w-20" src={pd.image} alt="" />
                         <div>

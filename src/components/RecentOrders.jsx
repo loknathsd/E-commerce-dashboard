@@ -66,7 +66,7 @@ const RecentOrders = () => {
                     </thead>
                     <tbody>
                         {orderList.map(order =>
-                            <tr className="bg-white dark:bg-gray-800">
+                            <tr key={order.orderNo} className="bg-white dark:bg-gray-800">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {order.orderNo}
                                 </th>

@@ -13,7 +13,6 @@ import Register from '../../pages/Register';
 
 const Routing = () => {
     return (
-        <div>
             <Routes>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
@@ -28,7 +27,6 @@ const Routing = () => {
                     <Route path='profile' element={<Profile/>}/>
                 </Route>
             </Routes>
-        </div>
     );
 };
 

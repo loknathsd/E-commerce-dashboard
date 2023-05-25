@@ -55,7 +55,7 @@ export const ordersGrid = [
 
 export const ordersData = [
     {
-        id: 845954,
+        id: 8459541,
         image:'',
         CustomerName: 'Jie Yan',
         TotalAmount: 87.99,
@@ -87,7 +87,7 @@ export const ordersData = [
             'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
     },
     {
-        id: 24546,
+        id: 245461,
         CustomerName: 'Frank',
         TotalAmount: 84.99,
         OrderItems: 'Pan Cake',
@@ -110,7 +110,7 @@ export const ordersData = [
     },
 
     {
-        id: 845954,
+        id: 8459542,
         CustomerName: 'Jie Yan',
         TotalAmount: 87.99,
         OrderItems: 'Shoes',
@@ -142,7 +142,7 @@ export const ordersData = [
             'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
     },
     {
-        id: 24546,
+        id: 245462,
         CustomerName: 'Frank',
         TotalAmount: 84.99,
         OrderItems: 'Pan Cake',
@@ -164,7 +164,7 @@ export const ordersData = [
             'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
     },
     {
-        id: 845954,
+        id: 8459543,
         CustomerName: 'Jie Yan',
         TotalAmount: 87.99,
         OrderItems: 'Shoes',
@@ -196,7 +196,7 @@ export const ordersData = [
             'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
     },
     {
-        id: 24546,
+        id: 245463,
         CustomerName: 'Frank',
         TotalAmount: 84.99,
         OrderItems: 'Pan Cake',

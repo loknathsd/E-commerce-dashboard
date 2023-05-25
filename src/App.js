@@ -1,7 +1,6 @@
 import Routing from './utils/Routing/Routing';
 
 function App() {
-
   return (
     <div >
       <Routing />

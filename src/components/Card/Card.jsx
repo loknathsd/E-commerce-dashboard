@@ -1,14 +1,13 @@
 import React from 'react';
 
-const Card = ({dt}) => {
+const Card = ({dat}) => {
     return (
         <div className='bg-white w-[22%] h-[126px] font-serif border border-gray-200 rounded flex justify-center gap-4 align-middle items-center'>
-            <p className='text-3xl text-gray-500  p-3 rounded-full  bg-blue-100 '>{dt.icon}</p>
+            <span className='text-3xl text-gray-500  p-3 rounded-full  bg-blue-100 '>{dat.icon}</span>
             <div>
-                <p className='text-gray-400 text-md '>{dt.title}</p>
-                <p>{dt.price}</p>
+                <p className='text-gray-400 text-md '>{dat.title}</p>
+                <p>{dat.price}</p>
             </div>
-            
         </div>
     );
 };

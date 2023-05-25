@@ -34,7 +34,7 @@ const info = [
 
 const About = () => {
     return (
-        <div className='bg-white w-[45%] p-5 divide-y divide-slate-200'>
+        <div className='bg-white w-[45%] p-5 divide-y divide-slate-200 font-[Montserrat] font-medium'>
             <div className='flex justify-center gap-14 py-5 font-serif'>
                 <div className="flex gap-3">
                     <p className='text-3xl bg-blue-500 p-3 rounded text-white self-center '><SlUserFollowing /> </p>
@@ -51,12 +51,12 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className='p-5'>
-                <p>About</p>
-                <p>Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..</p>
+            <div className='p-5 text-gray-600'>
+                <p className='text-xl font-semibold my-5'>About</p>
+                <p className='text-sm'>Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..</p>
                {
-                info.map(inf=> <div key={inf.id} className="flex my-6">
-                   <p>{inf.icon}</p>
+                info.map(inf=> <div key={inf.id} className="flex my-6 gap-2">
+                   <p className='self-center text-xl '>{inf.icon}</p>
                     <p>{inf.title}</p>
                 </div>)
                }

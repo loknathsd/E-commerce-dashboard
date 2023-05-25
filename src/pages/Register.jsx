@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
-import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [data, setData] = useState([]);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const info = { name, email, password };
+        setData([...data, info]);
+    }
+    useEffect(() => {
+        localStorage.setItem('newUser', JSON.stringify(data));
+    }, [data])
 
     return (
         <div className='bg-gray-100 w-full lg:h-[100vh] flex justify-center'>
@@ -26,21 +36,21 @@ const Register = () => {
                         <span className='text-gray-500 font-medium text-lg'>Or</span>
                         <hr className='w-1/3 border-1 border-gray-300' />
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} >
+                    <form onSubmit={handleSubmit} >
                         <div className='lg:flex justify-center text-left'>
                             <div className='lg:w-[86%] '>
                                 <label >Name</label><br />
-                                <input className='mt-2 border-2 border-gray-30 w-full  py-2 rounded-md px-3' {...register("name")} required />
+                                <input onChange={(e) => setName(e.target.value)} type="text" className='mt-2 border-2 border-gray-30 w-full  py-2 rounded-md px-3' name="name" value={name} required />
                             </div>
                         </div>
                         <div className='lg:flex md:flex justify-center gap-3 text-left mt-4 mb-6 font-serif'>
                             <div>
                                 <label>Email</label><br />
-                                <input className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("email")} required />
+                                <input onChange={(e) => setEmail(e.target.value)} type="email" className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' name="email" value={email} required />
                             </div>
                             <div>
                                 <label>Password</label><br />
-                                <input className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("password")} required />
+                                <input onChange={(e) => setPassword(e.target.value)} type="password" className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' name="password" value={password} required />
                             </div>
                         </div>
                         <input className='cursor-pointer border-2 border-gray-30 rounded-md text-white w-[86%] py-2 bg-sky-500' type="submit" value="SignUp" />

@@ -1,13 +1,34 @@
-import React from 'react';
+import {React,useEffect,useState} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
-import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import useAuth from '../context/useAuth';
 
 const Login = () => {
-    const { register, handleSubmit} = useForm();
-    const onSubmit = data => console.log(data);
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+    const [loggedUser,setLoggedUser] = useState([]);
+     const {user,setUser} = useAuth();
+     console.log(user,'login')
 
+    useEffect(()=>{
+        const getUser = localStorage.getItem('newUser');
+        const userData = JSON.parse(getUser);
+        setLoggedUser(userData);
+    },[])
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        const user = loggedUser.filter(user=>{
+            return user.email=== email && user.password === password
+        })
+        console.log(user,'check')
+        if(user.length ===0){
+            alert('Invalid Credential');
+        }else if(user && user.length>0){
+            setUser(user[0]);
+            console.log('login successful')
+        }
+    }
     return (
         <div className='bg-gray-100 w-full h-[100vh] flex justify-center'>
             <div className=' lg:w-[50%]  md:w-[60%] shadow-lg  lg:h-3/4 bg-white mt-16 rounded-lg text-center max-sm:p-8 '>
@@ -26,15 +47,15 @@ const Login = () => {
                         <span className='text-gray-500 font-medium text-lg'>Or</span>
                         <hr className='w-1/3 border-1 border-gray-300' />
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit}>
                     <div className='lg:flex md:flex justify-center gap-3 text-left mt-4 mb-6 font-serif'>
                             <div>
                                 <label>Email</label><br />
-                                <input className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("email")} required />
+                                <input onChange={(e)=>setEmail(e.target.value)} className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' type="email" name="email" value={email} required />
                             </div>
                             <div>
                                 <label>Password</label><br />
-                                <input className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' {...register("password")} required />
+                                <input onChange={(e)=>setPassword(e.target.value)} className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' type="password" name="password" value={password} required />
                             </div>
                         </div>
                         <input className='cursor-pointer border-2 border-gray-30 rounded-md text-white w-[86%] py-2 bg-sky-500' type="submit" value="SignIn" />

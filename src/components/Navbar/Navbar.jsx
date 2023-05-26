@@ -11,12 +11,14 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../images/avatar.jpg'
 import { Link,useNavigate } from 'react-router-dom';
+import useAuth from '../../context/useAuth';
 
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+  const {logout} = useAuth();
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -24,10 +26,6 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const logout=()=>{
-    console.log('logout')
-  }
-
   const handleSetting =(title)=>{
     if(title === 'Profile'){
       navigate('/profile')
@@ -39,7 +37,6 @@ function Navbar() {
       logout();
     }
   }
-
   return (
     <AppBar elevation={1} position="sticky" style={{ background: '#f0f9ff', padding: '5px' }}  >
       <Container maxWidth="xl">

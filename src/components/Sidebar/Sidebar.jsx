@@ -3,7 +3,7 @@ import { MdOutlineDashboard, MdAddShoppingCart } from 'react-icons/md';
 import { BsMinecartLoaded, BsPersonFillAdd, BsFillCartCheckFill, BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { FaUsers } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const index = [
     {
@@ -43,15 +43,10 @@ const index = [
     },
 
 ];
-
 const Sidebar = () => {
-    const [active, setActive] = useState("Dashboard");
     const [show, setShow] = useState(false);
+    const location = useLocation();
 
-    const handleActiveButton = (menu) => {
-        setActive(menu.title);
-    }
-  
     return (
         <div >
             <div style={{position:'sticky', top:0 }} className={`${show ? 'w-20' : 'w-56'} border border-r-red-200 h-[100vh] px-7 pt-16`}>
@@ -62,7 +57,7 @@ const Sidebar = () => {
                 <div style={{ maxHeight: "calc(100% - 50px)" }}>
                     {index.map((nav, index) =>
                         <div key={index} >
-                            <Link to={nav.path} onClick={() => handleActiveButton(nav)}  className={`font-serif flex mb-[1rem] mt-8 text-lg gap-4 cursor-pointer ${active === nav.title ? 'text-blue-500' : 'text-gray-500'}`}>
+                            <Link to={nav.path} className={`font-serif flex mb-[1rem] mt-8 text-lg gap-4 cursor-pointer ${location.pathname === `/${nav.path}` ? 'text-blue-500' : 'text-gray-500'}`}>
                                 <button className='text-xl'>{nav.Icon}</button>
                                 {!show && <p>{nav.title}</p>}
                             </Link>

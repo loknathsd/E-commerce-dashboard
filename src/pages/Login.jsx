@@ -8,8 +8,7 @@ const Login = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [loggedUser,setLoggedUser] = useState([]);
-     const {user,setUser} = useAuth();
-     console.log(user,'login')
+     const {setUser} = useAuth();
 
     useEffect(()=>{
         const getUser = localStorage.getItem('newUser');
@@ -21,12 +20,10 @@ const Login = () => {
         const user = loggedUser.filter(user=>{
             return user.email=== email && user.password === password
         })
-        console.log(user,'check')
         if(user.length ===0){
             alert('Invalid Credential');
         }else if(user && user.length>0){
             setUser(user[0]);
-            console.log('login successful')
         }
     }
     return (

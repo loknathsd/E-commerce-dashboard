@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [data, setData] = useState([]);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const info = { name, email, password };
         setData([...data, info]);
+        localStorage.setItem('newUser', JSON.stringify([...data,info]));
+        navigate('/login');
     }
-    useEffect(() => {
-        localStorage.setItem('newUser', JSON.stringify(data));
-    }, [data])
-
     return (
         <div className='bg-gray-100 w-full lg:h-[100vh] flex justify-center'>
             <div className=' lg:w-[50%] md:w-[60%] shadow-lg  h-5/6 bg-white mt-10 rounded-lg text-center max-sm:p-8'>

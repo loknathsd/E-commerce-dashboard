@@ -1,7 +1,7 @@
 import {React,useEffect,useState} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../context/useAuth';
 
 const Login = () => {
@@ -9,7 +9,9 @@ const Login = () => {
     const [password,setPassword] = useState("");
     const [loggedUser,setLoggedUser] = useState([]);
      const {setUser} = useAuth();
-
+    const navigate = useNavigate();
+    const location =useLocation();
+    const from = location.state?.from?.pathname || "/";
     useEffect(()=>{
         const getUser = localStorage.getItem('newUser');
         const userData = JSON.parse(getUser);
@@ -18,12 +20,14 @@ const Login = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         const user = loggedUser.filter(user=>{
-            return user.email=== email && user.password === password
+            return user.email=== email && user.password === password ;
         })
         if(user.length ===0){
             alert('Invalid Credential');
         }else if(user && user.length>0){
-            setUser(user[0]);
+            setUser(user[0])
+            sessionStorage.setItem('user',JSON.stringify(user[0]))
+            navigate(from , {replace : true});
         }
     }
     return (

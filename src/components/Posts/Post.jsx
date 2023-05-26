@@ -15,7 +15,7 @@ const Post = ({dt}) => {
             </div>
             <div>
                 <h1 className='mb-4 font-bold text-lg'>{status}</h1>
-                <img src={banner} alt="" />
+                <img className='w-full' src={banner} alt="" />
             </div>
             <Reactions/>
             <div className='flex gap-2 my-5'>

@@ -225,7 +225,7 @@ export const customersGrid = [
     {
         field: 'CustomerName',
         headerName: 'Customer Name',
-        width: '250',
+        width: 260,
         marginLeft:'50px',
         renderCell:(params)=> <div className="image flex gap-4">
         <img

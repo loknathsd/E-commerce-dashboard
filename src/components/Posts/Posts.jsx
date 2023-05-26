@@ -22,7 +22,7 @@ const data=[
 
 const Posts = () => {
     return (
-        <div className='w-[60%]'>
+        <div className='lg:w-[60%] max-sm:mt-5 md:mt-5 lg:mt-0'>
             {
                 data.map(dt=><Post key={dt.id} dt={dt} />)
             }

@@ -23,10 +23,10 @@ const Register = () => {
                 <div className='font-serif max-lg:p-10' >
                     <h1 className='mt-12 text-3xl font-serif capitalize'>Create an account</h1>
                     <div className='lg:flex md:flex justify-center gap-3 mt-10 mb-8'>
-                        <button className='border-2 border-gray-30 w-72 rounded-md py-2 flex justify-center items-center align-middle '>
+                        <button className='border-2 border-gray-30 lg:w-[42%] md:w-full max-sm:w-full  rounded-md py-2 flex justify-center items-center align-middle '>
                             <FcGoogle className='mr-3 text-2xl' /> SignUp with Google
                         </button>
-                        <button className=' max-sm:mt-5 border-2 border-gray-30 w-72 rounded-md py-2 flex justify-center items-center align-middle '>
+                        <button className='  border-2 border-gray-30 lg:w-[42%] md:w-full max-sm:w-full  max-sm:mt-5 lg:mt-0 rounded-md py-2 flex justify-center items-center align-middle '>
                             <FaFacebookF className='mr-3 text-2xl text-blue-600' /> SignUp with Facebook
                         </button>
                     </div>
@@ -37,19 +37,19 @@ const Register = () => {
                     </div>
                     <form onSubmit={handleSubmit} >
                         <div className='lg:flex justify-center text-left'>
-                            <div className='lg:w-[86%] '>
+                            <div className='lg:w-[84%] '>
                                 <label >Name</label><br />
                                 <input onChange={(e) => setName(e.target.value)} type="text" className='mt-2 border-2 border-gray-30 w-full  py-2 rounded-md px-3' name="name" value={name} required />
                             </div>
                         </div>
                         <div className='lg:flex md:flex justify-center gap-3 text-left mt-4 mb-6 font-serif'>
-                            <div>
+                            <div className='lg:w-[42%] md:w-[50%]'>
                                 <label>Email</label><br />
-                                <input onChange={(e) => setEmail(e.target.value)} type="email" className=' mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' name="email" value={email} required />
+                                <input onChange={(e) => setEmail(e.target.value)} type="email" className='w-full  mt-2 border-2 border-gray-30  py-2 rounded-md px-3' name="email" value={email} required />
                             </div>
-                            <div>
+                            <div className='lg:w-[42%] md:w-[50%]'>
                                 <label>Password</label><br />
-                                <input onChange={(e) => setPassword(e.target.value)} type="password" className='mt-2 border-2 border-gray-30 w-72 max-lg:w-52 max-sm:w-72  py-2 rounded-md px-3' name="password" value={password} required />
+                                <input onChange={(e) => setPassword(e.target.value)} type="password" className='w-full mt-2 border-2 border-gray-30   py-2 rounded-md px-3' name="password" value={password} required />
                             </div>
                         </div>
                         <input className='cursor-pointer border-2 border-gray-30 rounded-md text-white w-[86%] py-2 bg-sky-500' type="submit" value="SignUp" />

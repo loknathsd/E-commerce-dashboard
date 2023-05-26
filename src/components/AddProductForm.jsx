@@ -3,7 +3,7 @@ import Upload from './Upload';
 
 const AddProductForm = () => {
     return (
-        <form className='border border-gray-200 rounded-md w-[90%] p-10'>
+        <form className='border border-gray-200 rounded-md lg:w-[90%] md:w-[80%]  lg:p-10'>
             <Upload /> 
             <div className="mt-5">
                 <label className="text-lg text-gray-500 font-serif " >Product Name</label><br />

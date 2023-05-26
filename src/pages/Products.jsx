@@ -14,7 +14,7 @@ const Products = () => {
         <div>
             <h1 className='text-3xl text-gray-600 font-serif ml-10 mt-5'>Products</h1>
             {products.length ===0 && <Loader /> }
-            <div className='grid grid-cols-4 justify-items-center p-5 gap-6'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 justify-items-center p-5 gap-6'>
                 {products.map(pd => <Product key={pd.id} pd={pd} />)}
             </div>
         </div>

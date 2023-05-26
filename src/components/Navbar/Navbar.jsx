@@ -79,7 +79,7 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           </Box>
-          <Box className="text-black flex gap-8 mr-12 font-[Montserrat] text-lg font-bold">
+          <Box className="text-blue-400 flex gap-8 mr-12 font-serif text-lg ">
             <Link to='/login'>Login</Link>
             <Link to='/register'>Register</Link>
           </Box>

@@ -35,16 +35,16 @@ const data = [
 
 const Dashboard = () => {
     return (
-        <div>
+        <div className='w-[90%] mx-auto'>
             <h1 className='text-3xl font-serif text-gray-600 ml-10 mt-5'>Overview</h1>
-            <div className='flex justify-center gap-5 mt-5'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2  mx-auto gap-6 mt-5'>
                 {data.map(dat => <Card key={dat.id} dat={dat} />)}
             </div>
-            <div className="flex mt-10 justify-center gap-10">
+            <div className="lg:flex mt-10 justify-center gap-10">
                 <TotalSpent />
                 <Analytic />
             </div>
-            <div className='flex justify-center my-10 gap-10'>
+            <div className='lg:flex justify-center my-10 gap-10'>
                 <RecentOrders />
                 <TopSell />
             </div>

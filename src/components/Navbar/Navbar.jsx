@@ -57,7 +57,7 @@ function Navbar() {
             }}
           >
           </Typography>
-          <Box>
+          <Box className="max-sm:hidden">
             <input placeholder='Search' type="text" className='px-8 py-2 border shadow rounded bg-slate-100 text-black ' />
           </Box>
           <Typography

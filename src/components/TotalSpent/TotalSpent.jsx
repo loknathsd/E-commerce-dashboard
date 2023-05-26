@@ -103,7 +103,7 @@ const TotalSpent = () => {
     };
     const chartSeries = data.series;
     return (
-        <div className='bg-white w-[60%] p-10'>
+        <div className='bg-white lg:w-[70%] p-10'>
             <h4 className='font-serif'>Total Spent</h4>
             <h1 className='text-2xl text-blue-400 font-bold' >$682</h1>
             <div >

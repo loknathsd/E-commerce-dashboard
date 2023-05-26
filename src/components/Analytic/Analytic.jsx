@@ -56,7 +56,7 @@ const Analytic = () => {
     
       const chartSeries = data.series;
     return (
-        <div className='w-[30%] bg-white p-8 '>
+        <div className='lg:w-[30%] max-md:mt-5 md:mt-5 lg:mt-0 bg-white p-8 '>
             <h1 className='text-xl font-serif'>Analytics</h1>
             <div>
                 <Chart

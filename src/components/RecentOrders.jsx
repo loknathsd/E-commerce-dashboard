@@ -41,7 +41,7 @@ const orderList = [
 
 const RecentOrders = () => {
     return (
-        <div className='w-[60%] bg-white p-5 '>
+        <div className='lg:w-[70%] bg-white p-5 '>
             <div className="relative overflow-x-auto">
                 <h1 className="text-xl font-serif ml-5 mb-2 " >Recent orders</h1>
                 <table className="w-full text-xs text-left  text-gray-500 dark:text-gray-400">

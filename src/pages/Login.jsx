@@ -19,12 +19,16 @@ const Login = () => {
     },[])
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const user = loggedUser.filter(user=>{
+        if(loggedUser===null){
+            alert('You have no account!!.Please create an Account');
+            navigate('/register');
+        }
+        const user = loggedUser?.filter(user=>{
             return user.email=== email && user.password === password ;
         })
-        if(user.length ===0){
+        if(user?.length ===0){
             alert('Invalid Credential');
-        }else if(user && user.length>0){
+        }else if(user && user?.length>0){
             setUser(user[0])
             sessionStorage.setItem('user',JSON.stringify(user[0]))
             navigate(from , {replace : true});
